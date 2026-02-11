@@ -73,7 +73,9 @@ npm install
 
 ### 3. Configurar variáveis de ambiente
 Crie um arquivo .env com a URL do backend:
+```
 VITE_API_URL=http://localhost:8080
+```
 
 ### 4. Rodar a aplicação
 ```
