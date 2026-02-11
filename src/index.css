@@ -1,0 +1,337 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =========================
+   COMPONENTS
+   ========================= */
+
+@layer components {
+  .input {
+    @apply w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-800
+           focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500;
+  }
+
+  .btn-primary {
+    @apply rounded-xl bg-blue-600 px-5 py-2 text-sm font-semibold text-white
+           shadow hover:bg-blue-700 active:scale-95 transition;
+  }
+
+  .btn-secondary {
+    @apply rounded-xl bg-gray-200 px-5 py-2 text-sm font-medium text-gray-700
+           hover:bg-gray-300 active:scale-95 transition;
+  }
+
+  .btn-danger {
+    @apply rounded-lg bg-red-500 px-3 py-1.5 text-xs font-medium text-white
+           hover:bg-red-600 transition;
+  }
+
+  .empty-message {
+  @apply text-center text-sm text-gray-500 py-6;
+}
+
+}
+
+/* =========================
+   BASE
+   ========================= */
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  @apply bg-gray-100 text-gray-800;
+  margin: 0;
+}
+
+/* =====================
+   PAGE LAYOUT
+   ===================== */
+
+@layer components {
+  
+  .app-layout {
+    /* @apply flex min-h-screen flex-col; */
+      @apply flex flex-col min-h-screen;
+  }
+
+  .app-main {
+    @apply flex-1 overflow-auto bg-gray-50 px-2 sm:px-4 py-4 sm:py-6;
+  }
+
+  .page {
+    /* @apply min-h-screen bg-gray-100 px-4 py-6; */
+    @apply min-h-screen bg-gray-100 px-4 py-6;
+  }
+
+  .page-container {
+    @apply mx-auto max-w-full sm:max-w-5xl;
+  }
+
+  .page-title {
+    @apply mb-6 text-3xl font-bold text-gray-800;
+  }
+
+.card {
+ @apply rounded-xl bg-white shadow p-2 sm:p-6;
+}
+
+@media (max-width: 640px) {
+  .page {
+    padding-left: 0.25rem;   /* 1px de padding interno, ou ajuste */
+    padding-right: 0.25rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+  }
+}
+
+  .card-form {
+    @apply mb-8;
+  }
+
+  .loading-text {
+    @apply animate-pulse text-gray-500;
+  }
+
+  .error-box {
+    @apply rounded-lg bg-red-100 p-3 text-red-700;
+  }
+
+    .page-loading {
+    @apply animate-pulse text-gray-500;
+  }
+
+  .page-error {
+    @apply rounded-lg bg-red-100 p-3 text-red-700;
+  }
+}
+
+
+
+
+
+/* =====================
+   HEADER
+   ===================== */
+
+@layer components {
+  .app-header {
+    @apply bg-gray-800 text-white w-full flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 p-2 sm:p-4;
+  }
+
+  .header-title {
+    @apply text-xl font-bold;
+  }
+
+  .nav-buttons {
+    @apply flex flex-wrap gap-2 justify-center sm:justify-start;
+  }
+
+  .nav-button {
+    @apply px-3 py-1 rounded bg-gray-700 hover:bg-gray-600 text-white;
+  }
+
+  .nav-button.active {
+    @apply bg-blue-600;
+  }
+}
+
+
+/* =====================
+   FOOTER
+   ===================== */
+
+@layer components {
+  .app-footer {
+    @apply mt-10 bg-gray-100 py-4 text-center
+           text-sm text-gray-500;
+  }
+}
+
+  /* =====================
+     ITEM
+     ===================== */
+
+@layer components {
+.item-item {
+  @apply grid grid-cols-[1fr_auto] gap-2 sm:gap-4 rounded-lg border bg-gray-50 p-2 sm:p-4;
+}
+
+
+.item-info {
+  @apply flex flex-col gap-1;
+}
+
+  .item-name {
+    @apply font-semibold text-gray-800;
+  }
+
+  .item-code {
+    @apply text-sm text-gray-500;
+  }
+
+  .item-meta {
+    @apply text-sm font-medium text-gray-700;
+  }
+
+.item-actions {
+  @apply flex flex-col gap-2;
+}
+  
+
+  /* =====================
+     BUTTONS
+     ===================== */
+
+  .btn-sm {
+    @apply px-3 py-1 text-sm rounded-md;
+  }
+
+  .btn-delete-sm {
+    @apply inline-flex items-center justify-center
+           rounded-md px-3 py-1.5
+           text-sm font-medium
+           text-red-600
+           hover:bg-red-100
+           transition;
+}
+
+}
+
+  /* =====================
+     ITEM LIST
+     ===================== */
+
+@layer components {
+
+  .item-list{
+    @apply grid grid-cols-1 gap-4
+           sm:grid-cols-2
+           lg:grid-cols-3;
+  }
+
+  .empty-message {
+    @apply text-center text-gray-500;
+  }
+}
+
+.item-blocked {
+  background-color: #f3f3f3;
+  opacity: 0.7;
+}
+
+.item-blocked-text {
+  margin-top: 8px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #c0392b;
+}
+
+.item-blocked .btn-primary {
+  background: #aaa;
+}
+
+.blocked-toggle {
+  margin-bottom: 1rem;
+}
+
+.blocked-list .item-item {
+  filter: grayscale(0.8);
+}
+
+
+  /* =====================
+     PRODUCT FORM
+     ===================== */
+
+@layer components {
+  /* FORM */
+  .item-form {
+    @apply space-y-6 pb-6;
+  }
+
+  .form-grid {
+    @apply grid grid-cols-1 gap-4 md:grid-cols-3;
+  }
+
+  .form-field label {
+    @apply block text-sm font-medium text-gray-700 mb-1;
+  }
+
+  .form-field input,
+  .association-form input,
+  .association-form select {
+    @apply w-full rounded-md border border-gray-300
+           bg-white px-3 py-2 text-sm
+           focus:outline-none focus:ring-2 focus:ring-blue-500;
+  }
+
+  /* ASSOCIATIONS */
+  .association-box {
+    @apply rounded-lg border border-gray-200 p-4;
+  }
+
+  .association-box h3 {
+    @apply mb-3 text-sm font-semibold text-gray-600;
+  }
+
+  .association-form {
+    @apply grid grid-cols-1 gap-2 mb-3 md:grid-cols-3;
+  }
+}
+
+
+  /* =====================
+     ASSOCIATION TABLE
+     ===================== */
+
+@layer components {
+  .association-table {
+    @apply w-full border border-gray-300 text-sm rounded-lg overflow-hidden;
+  }
+
+  .association-table thead {
+    @apply bg-gray-300;
+  }
+
+  .association-table th {
+    @apply px-3 py-2 text-gray-700 font-semibold text-center;
+  }
+
+  .association-table tbody tr {
+    @apply border-t border-gray-300;
+  }
+
+  .association-table tbody tr:nth-child(even) {
+    @apply bg-gray-100;
+  }
+
+
+  .association-table td {
+    @apply px-3 py-2 text-center text-gray-700;
+  }
+
+  /* Última coluna (ações) alinhada à direita */
+  .association-table td.actions {
+    @apply text-right;
+  }
+}
+
+  /* BUTTONS */
+  .form-actions {
+    @apply flex justify-end gap-2;
+  }
+
+.input-number {
+  appearance: auto;
+  -webkit-appearance: auto;
+  -moz-appearance: number-input;
+}
+
+.input-number::-webkit-inner-spin-button,
+.input-number::-webkit-outer-spin-button {
+  -webkit-appearance: auto;
+  opacity: 1;
+}
